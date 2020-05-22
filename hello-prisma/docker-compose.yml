@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  mysql:
+    image: mysql:8.0.19
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_DATABASE: prisma
+      MYSQL_ROOT_PASSWORD: prisma
+    volumes:
+      - /var/lib/mysql

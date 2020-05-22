@@ -5,21 +5,21 @@ const prisma = new PrismaClient();
 // A `main` function so that you can use async/await
 async function main() {
   // create a post
-  // const post = await prisma.post.create({
-  //   data: {
-  //     title: "Prisma makes database easy",
-  //     author: {
-  //       connect: { email: "maria@prisma.io" },
-  //     },
-  //   },
-  // });
+  const post = await prisma.post.create({
+    data: {
+      title: "Prisma makes database easy",
+      author: {
+        connect: { email: "maria@prisma.io" },
+      },
+    },
+  });
 
   // print the created post in console
-  // console.log({ post });
+  console.log({ post });
 
   // update the post
   const post = await prisma.post.update({
-    where: { id: 2 },
+    where: { id: 1 },
     data: { published: true, title: "Prisma makes database difficult" },
   });
 
@@ -36,6 +36,7 @@ async function main() {
 
   // fetch all posts
   const allPosts = await prisma.post.findMany();
+
   console.log({ allPosts });
 }
 
