@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node index",
-    "format:schema": "prisma format",
-    "migrate": "risma migrate save --name init --experimental",
+    "format:schema": "npx prisma format",
+    "migrate": "npx prisma migrate save --name init --experimental",
     "apply:migration": "prisma migrate up --experimental",
     "generate": "npx prisma generate"
     
